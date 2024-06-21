@@ -1,0 +1,65 @@
+{
+  "build": {
+    "beforeDevCommand": "trunk serve",
+    "beforeBuildCommand": "trunk build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "Rust in Peace",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "notification": {
+        "all": true
+      }
+    },
+    "windows": [
+      {
+        "title": "Rust in Peace",
+        "width": 330,
+        "height": 450,
+        "resizable": false,
+        "fullscreen": false,
+        "label":"main",
+        "visible": false,
+        "center": true
+      },
+      {
+        "width": 400,
+        "height": 200,
+        "decorations": false,
+        "url": "public/splashscreen.html",
+        "label": "splashscreen",
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.rustinpeace.dev",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "windows": {
+        "webviewInstallMode": {
+          "type": "downloadBootstrapper"
+        }
+      }
+    }
+  }
+}
